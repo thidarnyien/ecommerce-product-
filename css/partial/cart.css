@@ -1,0 +1,24 @@
+.active-cart{
+    display: none;
+    position: absolute;
+    width: 22%;
+    border-radius: 5%;
+    right: 8%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.selectImage{
+    width: 48px;
+    border-radius: 3px;
+    margin-right: 5px;
+
+}
+.fa-trash{
+    cursor: pointer;
+}
+@media (max-width:800px) {
+    .active-cart{
+        width: 80%;
+        right: 8%;
+    }
+}

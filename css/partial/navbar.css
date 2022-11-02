@@ -1,0 +1,41 @@
+body,.nav-color{
+        color: hsl(219, 9%, 45%);
+        font-family: 'Kumbh Sans', sans-serif;
+    }
+.avatar{
+        cursor: pointer;
+}
+.fa-bars{
+        display: none !important;
+        font-size: 1.4rem;
+}
+.fa-close{
+        font-size: 1.5rem;
+}
+@media (max-width: 800px) {
+        nav{
+                position: absolute;
+                display: inline-block;
+                top: 0;
+                left: -100%;
+                width: 60%;
+                height: 100vh;
+                background-color: white;
+                padding: 20px;
+                transition: all .5s;
+        }
+        ul{
+                margin: 40px;
+                height: 100%;
+                background-color: white;
+        }
+        .fa-close{
+                margin-top: 10px;
+        }
+        .fa-bars{
+                display: inline !important;
+        }
+}
+.activeMenu{
+        left: 0;
+}

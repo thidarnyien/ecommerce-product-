@@ -1,0 +1,39 @@
+.lightbox{
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .8);
+    display: none;
+}
+.lightbox>*{
+    margin-top: 50px;
+    width: 40%;
+    text-align: center;
+}
+.lightbox-thumbnails{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+.lightbox i{
+    font-size: 2rem;
+    position: relative;
+    color: white;
+}
+i:hover{
+    color: hsl(26, 100%, 55%);
+}
+.fa-circle-chevron-left{
+    right: -10px;
+}
+.fa-circle-chevron-right{
+    left: -10px;
+}
+@media (max-width:800px) {
+    .lightbox>*{
+        margin-top: 50px;
+        width: 100%;
+        text-align: center;
+    }
+}

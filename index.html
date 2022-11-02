@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/8cd7772a80.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+  <div class="container navbar navbar-expand-lg border-bottom">
+    <i class="fa-solid fa-bars me-3"></i>
+      <a href="#" class="navbar-brand">
+        <img src="./images/logo.svg" alt="" class="img-fluid">
+      </a>
+      <nav>
+        <i class="fa-solid fa-close closeMenu d-lg-none d-inline"></i>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a href="#" class="nav-link nav-color">Collections</a></li>
+          <li class="nav-item"><a href="#" class="nav-link nav-color">Man</a></li>
+          <li class="nav-item"><a href="#" class="nav-link nav-color">Woman</a></li>
+          <li class="nav-item"><a href="#" class="nav-link nav-color">About</a></li>
+          <li class="nav-item"><a href="#" class="nav-link nav-color">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="navbar ms-auto">
+        <a href="#" class="cart me-2 me-lg-5 nav-link">
+          <img src="./images/icon-cart.svg" alt=""class="img-fluid">
+          <span id="count" class="badge bg-danger">0</span>
+        </a>
+        <div class="avatar" style="width:45px;height:45px">
+          <img src="./images/image-avatar.png" alt="" class="img-fluid">
+        </div>
+      </div>
+  </div>
+  <div class="active-cart card p-3">
+    <div class="title w-100 border-bottom">Cart</div>
+    <div class="addItem text-center my-3">
+      <ul class="list-group itemListToBuy mb-3">
+        <div class="selectItem d-flex align-items-center">
+          <div class="selectImage overflow-hidden">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="" class="img-fluid">
+          </div>
+          <div class="selectItemInfo text-start">
+            <small>Fall Limited Edition Sneakers</small>
+            <small>$125.00 x</small>
+            <small class="quantity me-3"></small>
+            <small class="totalAmount text-black"></small>
+          </div>
+          <i onclick="deleteItem()" class="fas fa-regular fa-trash text-danger"></i>
+        </div>
+      </ul>
+      <button id="checkoutBtn" class="btn-lg px-5 btn-orange text-white w-100">Checkout</button>
+    </div>
+  </div>
+  <main class="container d-flex justify-content-between align-items-center m-0 m-lg-5">
+    <section class="d-flex flex-column justify-content-center align-items-center ms-0 ms-lg-5">
+        <div class="main-image overflow-hidden mb-5">
+          <img src="./images/image-product-1.jpg " alt="" class="img-fluid pro-img">
+        </div>
+        <div class="thumbnails">
+          <div class="overlayContainer active" onclick="changeImage(this)">
+            <img src="./images/image-product-1.jpg" alt="" class="img-fluid thumbnail" >
+            <div class="overlay d-block"></div>
+          </div>
+          <div class="overlayContainer" onclick="changeImage(this)">
+            <img src="./images/image-product-2.jpg" alt="" class="img-fluid thumbnail">
+            <div class="overlay"></div>
+          </div>
+          <div class="overlayContainer" onclick="changeImage(this)">
+            <img src="./images/image-product-3.jpg" alt="" class="img-fluid thumbnail" >
+            <div class="overlay"></div>
+          </div>
+          <div class="overlayContainer" onclick="changeImage(this)">
+            <img src="./images/image-product-4.jpg" alt="" class="img-fluid thumbnail" >
+            <div class="overlay"></div>
+          </div>
+        </div>
+    </section>
+    <section class="p-5 info">
+      <p class="text-uppercase">Sneaker Company</p>
+
+      <h1 class="fw-bold color mb-4">Fall Limited Edition Sneakers</h1>
+
+      <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+
+      <p class="h3 fw-bold color">$125.00 <small class="h6 p-1 rounded-2 fw-light brand-color">50%</small></p>
+      
+      <p><del>$250.00</del></p>
+
+      <div class="btn-group-lg mt-4">
+        <button class="btnlight px-4 px-lg-3 btn-sm minus">
+          <img src="./images/icon-minus.svg" alt="">
+        </button>
+        <input type="button" class="btnlight itemCount btn-sm px-4 px-lg-3 fw-bolder" value="0">
+        <button class="btnlight btn-sm plus px-4 px-lg-3">
+          <img src="./images/icon-plus.svg" alt="">
+        </button>
+        <button id="addToCart" class="btn-lg px-5 btn-orange text-white mt-3 mt-lg-0">
+          <i  class="fa-solid fa-cart-shopping me-2"></i>
+          Add to cart</button>
+      </div>
+      
+    </section>
+  </main>
+  <div class="lightbox">
+    <section class="container d-flex flex-column align-items-center">
+      <i id="closeBtn" class="fa-solid fa-xmark align-self-end "></i>
+     <div class="d-flex justify-content-center align-items-center">
+      <i id="leftBtn" class="fa-solid fa-circle-chevron-left"></i>
+      <div class="main-image overflow-hidden mb-5">
+        <img src="./images/image-product-1.jpg " alt="" class="img-fluid lightbox-proImg">
+      </div>
+      <i id="rightBtn" class="fa-solid fa-circle-chevron-right"></i>
+     </div>
+      <div class="lightbox-thumbnails">
+        <div class="overlayContainer active" onclick="changeImageLightbox(this)">
+          <img src="./images/image-product-1.jpg" alt="" class="img-fluid thumbnail">
+          <div class="overlay d-block"></div>
+        </div>
+        <div class="overlayContainer" onclick="changeImageLightbox(this)">
+          <img src="./images/image-product-2.jpg" alt="" class="img-fluid thumbnail">
+          <div class="overlay"></div>
+        </div>
+        <div class="overlayContainer" onclick="changeImageLightbox(this)">
+          <img src="./images/image-product-3.jpg" alt="" class="img-fluid thumbnail" >
+          <div class="overlay"></div>
+        </div>
+        <div class="overlayContainer" onclick="changeImageLightbox(this)">
+          <img src="./images/image-product-4.jpg" alt="" class="img-fluid thumbnail" >
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="attribution text-center" >
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/thidarnyien">Thidar Nyein</a>.
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
